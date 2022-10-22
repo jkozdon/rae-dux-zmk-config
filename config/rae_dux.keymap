@@ -67,6 +67,14 @@
     };
 
     behaviors {
+        dp_qesc: double_tap {
+                compatible = "zmk,behavior-tap-dance";
+                label = "MY_DOUBLE_TAP";
+                #binding-cells = <0>;
+                tapping-term-ms = <200>;
+                bindings = <&kp Q>, <&kp ESC>;
+        };
+
         lhm: left_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "LEFT_POSITIONAL_HOLD_TAP";
@@ -121,10 +129,10 @@
 
         base_layer {
             bindings = <
-                   &kp Q        &kp W         &kp E              &kp R              &kp T              &kp Y              &kp U               &kp I                 &kp O         &kp P
+                   &dp_qesc     &kp W         &kp E              &kp R              &kp T              &kp Y              &kp U               &kp I                 &kp O         &kp P
                    &kp A        &kp S         &kp D              &kp F              &kp G              &kp H              &kp J               &kp K                 &kp L         &kp BSPC
                    &kp Z        &kp X         &kp C              &kp V              &kp B              &kp N              &kp M               &kp COMMA             &kp DOT       &kp FSLH
-                 /*&            &*/           &sk RCTL           &sk LSHFT          &sk MEH            &sk LCMD           &sl SYM_L           &kp SPC  /*&             &*/
+                 /*&            &*/           &sk RCTL           &sk LSHFT          &sk MEH            &sk LCMD           &sl SYM_L           &kp SPC             /*&             &*/
             >;
         };
 
