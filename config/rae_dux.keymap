@@ -130,19 +130,19 @@
          num_layer {
             bindings = <
                    &kp ESC      &none         &none         &kp LPAR      &kp RPAR   /**/   &kp CARET      &kp N7           &kp N8          &kp N9        &kp COLON
-                   &kp TAB      &none         &kp ASTRK     &kp MINUS     &kp FSLH   /**/   &kp LSHFT      &kp N4           &kp N5          &kp N6        &kp BSPC
-                   &kp COMMA    &none         &kp EQUAL     &kp PLUS      &kp DOT    /**/   &kp N0         &kp N1           &kp N2          &kp N3        &kp RETURN
-                 /*&            &*/           &trans        &trans        &kp N0     /**/   &to NAV_L      &sl SYM_L        &to BASE_L    /*&             &*/
+                   &kp TAB      &none         &kp ASTRK     &kp MINUS     &kp FSLH   /**/   &kp BSLH       &kp N4           &kp N5          &kp N6        &kp BSPC
+                   &none        &none         &kp EQUAL     &kp PLUS      &kp DOT    /**/   &kp N0         &kp N1           &kp N2          &kp N3        &kp RETURN
+                 /*&            &*/           &none         &none         &none      /**/   &to NAV_L      &sl SYM_L        &to BASE_L    /*&             &*/
             >;
         };
 
         /* Need to update */
         nav_layer {
             bindings = <
-                   &kp MEHK(T)   &trans       &trans        &trans        &none      /**/   &none          &none            &trans        &trans          &kp MEHK(T)
-                   &sk LALT     &sk LGUI      &sk LSHFT     &sk LCTRL     &trans     /**/   &trans         &kp LEFT         &kp DOWN      &kp UP          &kp RIGHT
-                   &trans       &none         &none         &none         &trans     /**/   &trans         &kp HOME         &kp K_PREV    &kp K_NEXT      &kp END
-                 /*&            &*/           &trans        &trans        &trans     /**/   &trans         &trans           &trans        /*&             &*/
+                   &kp ESC      &none         &none         &none         &none      /**/   &none          &none            &none         &none           &none
+                   &sk TAB      &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &none      /**/   &kp LEFT       &kp DOWN         &kp UP        &kp RIGHT       &kp BSPC
+                   &kp          &none         &none         &none         &none      /**/   &kp HOME       &kp PG_DN        &kp PG_UP     &kp END         &kp RETURN
+                 /*&            &*/           &trans        &trans        &none      /**/   &none          &sl SYM_L        &to BASE_L    /*&             &*/
             >;
         };
     };
