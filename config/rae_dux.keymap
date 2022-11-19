@@ -71,36 +71,36 @@
                   bindings = <&kp Q>, <&kp ESC>;
         };
 
-        td_blsh_L: td_blsh_L {
+        td_flsh_L: td_flsh_L {
                    compatible = "zmk,behavior-tap-dance";
-                   label = "TD_BLSH_L";
+                   label = "TD_FSLH_L";
                    #binding-cells = <0>;
                    tapping-term-ms = <200>;
-                   bindings = <&kp BSLH>, <&kp LEFT>;
+                   bindings = <&kp FSLH>, <&kp LEFT>;
         };
 
-        td_lbrc_D: td_lbrc_D {
+        td_dllr_D: td_dllr_D {
                    compatible = "zmk,behavior-tap-dance";
-                   label = "TD_LBRC_D";
+                   label = "TD_DLLR_D";
                    #binding-cells = <0>;
                    tapping-term-ms = <200>;
-                   bindings = <&kp LBRC>, <&kp DOWN>;
+                   bindings = <&kp DLLR>, <&kp DOWN>;
         };
 
-        td_rbrc_U: td_rbrc_U {
+        td_prcnt_U: td_prcnt_U {
                    compatible = "zmk,behavior-tap-dance";
-                   label = "TD_LBRC_D";
+                   label = "TD_PRCNT_D";
                    #binding-cells = <0>;
                    tapping-term-ms = <200>;
-                   bindings = <&kp RBRC>, <&kp UP>;
+                   bindings = <&kp PRCNT>, <&kp UP>;
         };
 
-        td_pipe_R: td_pipe_R {
+        td_tilde_R: td_tilde_R {
                    compatible = "zmk,behavior-tap-dance";
-                   label = "TD_PIPE_R";
+                   label = "TD_TILDE_R";
                    #binding-cells = <0>;
                    tapping-term-ms = <200>;
-                   bindings = <&kp PIPE>, <&kp RIGHT>;
+                   bindings = <&kp TILDE>, <&kp RIGHT>;
         };
 
     };
@@ -112,27 +112,27 @@
             bindings = <
                    &td_q_esc    &kp W         &kp E        &kp R          &kp T      /**/   &kp Y         &kp U               &kp I         &kp O         &kp P
                    &kp A        &kp S         &kp D        &kp F          &kp G      /**/   &kp H         &kp J               &kp K         &kp L         &kp BSPC
-                   &kp Z        &kp X         &kp C        &kp V          &kp B      /**/   &kp N         &kp M               &kp COMMA     &kp DOT       &kp FSLH
+                   &kp Z        &kp X         &kp C        &kp V          &kp B      /**/   &kp N         &kp M               &kp COMMA     &kp DOT       &kp RETURN
                  /*&            &*/           &sk RCTL     &sk LSHFT      &sk MEH    /**/   &sk LCMD      &sl SYM_L           &kp SPC     /*&             &*/
             >;
         };
 
         sym_layer {
             bindings = <
-                   &kp EXCL     &kp AT        &kp HASH      &kp DLLR      &kp PRCNT  /**/   &kp CARET      &kp AMPS         &kp ASTRK       &kp SEMI      &kp COLON
-                   &kp TAB      &kp UNDER     &kp GRAVE     &kp MINUS     &kp SQT    /**/   &td_blsh_L     &td_lbrc_D       &td_rbrc_U      &td_pipe_R    &kp BSPC
-                   &sk LALT     &none         &kp EQUAL     &kp PLUS      &kp DQT    /**/   &kp LBKT       &kp LPAR         &kp RPAR        &kp RBKT      &kp RETURN
-                 /*&            &*/           &trans        &trans        &trans     /**/   &to NAV_L      &to BASE_L       &to NUM_L     /*&             &*/
+                   &kp ESC      &kp LPAR      &kp RPAR      &kp ASTRK     &kp EQUAL  /**/   &kp PLUS       &kp AMPS         &kp GRAVE       &kp SQT       &kp CARET
+                   &kp TAB      &kp LBRC      &kp RBRC      &kp MINUS     &kp BSLH   /**/   &td_flsh_L     &td_dllr_D       &td_prcnt_U     &td_tilde_R   &kp BSPC
+                   &to BASE_L   &kp LBKT      &kp RBKT      &kp COMMA     &kp DOT    /**/   &kp SEMI       &kp EXCL         &kp AT          &kp HASH      &kp RETURN
+                 /*&            &*/           &sk RCTL      &sk LSHFT     &sk MEH    /**/   &to NAV_L      &sl SYM_L        &to NUM_L     /*&             &*/
             >;
         };
 
         /* Need to update */
          num_layer {
             bindings = <
-                   &kp ESC      &none         &none         &kp LPAR      &kp RPAR   /**/   &kp CARET      &kp N7           &kp N8          &kp N9        &kp COLON
-                   &kp TAB      &none         &kp ASTRK     &kp MINUS     &kp FSLH   /**/   &kp BSLH       &kp N4           &kp N5          &kp N6        &kp BSPC
-                   &none        &none         &kp EQUAL     &kp PLUS      &kp DOT    /**/   &kp N0         &kp N1           &kp N2          &kp N3        &kp RETURN
-                 /*&            &*/           &none         &none         &none      /**/   &to NAV_L      &sl SYM_L        &to BASE_L    /*&             &*/
+                   &kp ESC      &kp LPAR      &kp RPAR      &kp ASTRK     &kp EQUAL  /**/   &kp PLUS       &kp N7           &kp N8          &kp N9        &kp CARET
+                   &kp TAB      &kp LBRC      &kp RBRC      &kp MINUS     &kp BSLH   /**/   &kp FSLH       &kp N4           &kp N5          &kp N6        &kp BSPC
+                   &to BASE_L   &kp LBKT      &kp RBKT      &kp COMMA     &kp DOT    /**/   &kp N0         &kp N1           &kp N2          &kp N3        &kp RETURN
+                 /*&            &*/           &sk RCTL      &sk LSHFT     &sk MEH    /**/   &to NAV_L      &sl SYM_L        &to NUM_L     /*&             &*/
             >;
         };
 
@@ -141,8 +141,8 @@
             bindings = <
                    &kp ESC      &none         &none         &none         &none      /**/   &none          &none            &none         &none           &none
                    &sk TAB      &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &none      /**/   &kp LEFT       &kp DOWN         &kp UP        &kp RIGHT       &kp BSPC
-                   &kp          &none         &none         &none         &none      /**/   &kp HOME       &kp PG_DN        &kp PG_UP     &kp END         &kp RETURN
-                 /*&            &*/           &trans        &trans        &none      /**/   &none          &sl SYM_L        &to BASE_L    /*&             &*/
+                   &to BASE_L   &none         &none         &none         &none      /**/   &kp HOME       &kp PG_DN        &kp PG_UP     &kp END         &kp RETURN
+                 /*&            &*/           &none         &none         &none      /**/   &to NAV_L      &sl SYM_L        &to NUM_L    /*&             &*/
             >;
         };
     };
