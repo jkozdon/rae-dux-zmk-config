@@ -142,7 +142,7 @@
                    &kp ESC      &none         &none         &none         &none      /**/   &none          &none            &none         &none           &none
                    &sk TAB      &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &none      /**/   &kp LEFT       &kp DOWN         &kp UP        &kp RIGHT       &kp BSPC
                    &to BASE_L   &none         &none         &none         &none      /**/   &kp HOME       &kp PG_DN        &kp PG_UP     &kp END         &kp RETURN
-                 /*&            &*/           &none         &none         &none      /**/   &to NAV_L      &sl SYM_L        &to NUM_L    /*&             &*/
+                 /*&            &*/           &sk RCTRL     &none         &none      /**/   &to NAV_L      &sl SYM_L        &to NUM_L    /*&             &*/
             >;
         };
     };
