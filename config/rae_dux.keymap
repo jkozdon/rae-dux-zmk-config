@@ -67,7 +67,7 @@
                   compatible = "zmk,behavior-tap-dance";
                   label = "TD_Q_ESC";
                   #binding-cells = <0>;
-                  tapping-term-ms = <200>;
+                  tapping-term-ms = <400>;
                   bindings = <&kp Q>, <&kp ESC>;
         };
 
@@ -75,7 +75,7 @@
                    compatible = "zmk,behavior-tap-dance";
                    label = "TD_FSLH_L";
                    #binding-cells = <0>;
-                   tapping-term-ms = <200>;
+                   tapping-term-ms = <400>;
                    bindings = <&kp FSLH>, <&kp LEFT>;
         };
 
@@ -83,7 +83,7 @@
                    compatible = "zmk,behavior-tap-dance";
                    label = "TD_DLLR_D";
                    #binding-cells = <0>;
-                   tapping-term-ms = <200>;
+                   tapping-term-ms = <400>;
                    bindings = <&kp DLLR>, <&kp DOWN>;
         };
 
@@ -91,7 +91,7 @@
                    compatible = "zmk,behavior-tap-dance";
                    label = "TD_PRCNT_D";
                    #binding-cells = <0>;
-                   tapping-term-ms = <200>;
+                   tapping-term-ms = <400>;
                    bindings = <&kp PRCNT>, <&kp UP>;
         };
 
@@ -99,7 +99,7 @@
                    compatible = "zmk,behavior-tap-dance";
                    label = "TD_TILDE_R";
                    #binding-cells = <0>;
-                   tapping-term-ms = <200>;
+                   tapping-term-ms = <400>;
                    bindings = <&kp TILDE>, <&kp RIGHT>;
         };
 
@@ -113,7 +113,7 @@
                    &td_q_esc    &kp W         &kp E        &kp R          &kp T      /**/   &kp Y         &kp U               &kp I         &kp O         &kp P
                    &kp A        &kp S         &kp D        &kp F          &kp G      /**/   &kp H         &kp J               &kp K         &kp L         &kp BSPC
                    &kp Z        &kp X         &kp C        &kp V          &kp B      /**/   &kp N         &kp M               &kp COMMA     &kp DOT       &kp RETURN
-                 /*&            &*/           &sk RCTRL    &sk LSHFT      &sk MEH    /**/   &sk LCMD      &sl SYM_L           &kp SPC     /*&             &*/
+                 /*&            &*/           &sk RCTRL    &sk LSHFT      &sk LCMD   /**/   &sk MEH       &sl SYM_L           &kp SPC     /*&             &*/
             >;
         };
 
@@ -122,7 +122,7 @@
                    &kp ESC      &kp LPAR      &kp RPAR      &kp ASTRK     &kp EQUAL  /**/   &kp PLUS       &kp AMPS         &kp GRAVE       &kp SQT       &kp CARET
                    &kp TAB      &kp LBRC      &kp RBRC      &kp MINUS     &kp BSLH   /**/   &td_flsh_L     &td_dllr_D       &td_prcnt_U     &td_tilde_R   &kp BSPC
                    &to BASE_L   &kp LBKT      &kp RBKT      &kp COMMA     &kp DOT    /**/   &kp SEMI       &kp EXCL         &kp AT          &kp HASH      &kp RETURN
-                 /*&            &*/           &sk RCTRL     &sk LSHFT     &sk MEH    /**/   &to NAV_L      &sl SYM_L        &to NUM_L     /*&             &*/
+                 /*&            &*/           &sk RCTRL     &sk LSHFT     &sk LALT   /**/   &to NAV_L      &sl SYM_L        &to NUM_L     /*&             &*/
             >;
         };
 
@@ -132,14 +132,14 @@
                    &kp ESC      &kp LPAR      &kp RPAR      &kp ASTRK     &kp EQUAL  /**/   &kp PLUS       &kp N7           &kp N8          &kp N9        &kp CARET
                    &kp TAB      &kp LBRC      &kp RBRC      &kp MINUS     &kp BSLH   /**/   &kp FSLH       &kp N4           &kp N5          &kp N6        &kp BSPC
                    &to BASE_L   &kp LBKT      &kp RBKT      &kp COMMA     &kp DOT    /**/   &kp N0         &kp N1           &kp N2          &kp N3        &kp RETURN
-                 /*&            &*/           &sk RCTRL     &sk LSHFT     &sk MEH    /**/   &to NAV_L      &sl SYM_L        &to NUM_L     /*&             &*/
+                 /*&            &*/           &sk RCTRL     &sk LSHFT     &sk LCMD    /**/   &to NAV_L      &sl SYM_L        &kp SPC      /*&             &*/
             >;
         };
 
         /* Need to update */
         nav_layer {
             bindings = <
-                   &kp ESC      &none         &none         &none         &none      /**/   &none          &none            &none         &none           &none
+                   &kp ESC      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 /**/ &bt BT_SEL 4   &none            &bt BT_NXT    &bt BT_PRV      &bt BT_CLR
                    &sk TAB      &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &none      /**/   &kp LEFT       &kp DOWN         &kp UP        &kp RIGHT       &kp BSPC
                    &to BASE_L   &none         &none         &none         &none      /**/   &kp HOME       &kp PG_DN        &kp PG_UP     &kp END         &kp RETURN
                  /*&            &*/           &sk RCTRL     &none         &none      /**/   &to NAV_L      &sl SYM_L        &to NUM_L    /*&             &*/
