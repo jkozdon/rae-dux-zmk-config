@@ -142,7 +142,7 @@
                    &kp ESC      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 /**/ &bt BT_SEL 4   &none            &bt BT_PRV    &bt BT_NXT      &bt BT_CLR
                    &sk TAB      &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &none        /**/   &kp LEFT     &kp DOWN         &kp UP        &kp RIGHT       &kp BSPC
                    &to BASE_L   &none         &none         &none         &none        /**/   &kp HOME     &kp PG_DN        &kp PG_UP     &kp END         &kp RETURN
-                 /*&            &*/           &sk RCTRL     &none         &none        /**/   &to NAV_L    &sl SYM_L        &to NUM_L    /*&             &*/
+                 /*&            &*/           &sk RCTRL     &sk LSHFT     &sk LCMD     /**/   &to NAV_L    &sl SYM_L        &kp NUM_L    /*&             &*/
             >;
         };
     };
