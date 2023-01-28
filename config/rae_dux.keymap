@@ -18,9 +18,9 @@
 };
 
 #define BASE_L  0
-#define SYM_L   1
-#define NUM_L   2
-#define NAV_L   3
+#define NUM_L   1
+#define NAV_L   2
+#define SYM_L   3
 
 #define MEHK(KEY) LS(LC(LA(LG(KEY))))
 #define MEH       LS(LC(LA(LMETA)))
@@ -114,15 +114,6 @@
             >;
         };
 
-        sym_layer {
-            bindings = <
-                   &kp ESC      &kp LPAR      &kp RPAR      &kp ASTRK     &kp EQUAL  /**/   &kp PLUS       &kp AMPS         &kp GRAVE       &kp SQT       &kp CARET
-                   &kp TAB      &kp LBRC      &kp RBRC      &kp MINUS     &kp BSLH   /**/   &td_flsh_L     &td_dllr_D       &td_prcnt_U     &td_COLON_R   &kp BSPC
-                   &to BASE_L   &kp LBKT      &kp RBKT      &kp COMMA     &kp DOT    /**/   &kp SEMI       &kp EXCL         &kp AT          &kp HASH      &kp RETURN
-                 /*&            &*/           &sk RCTRL     &sk LSHFT     &sk LALT   /**/   &to NAV_L      &sl SYM_L        &to NUM_L     /*&             &*/
-            >;
-        };
-
         /* Need to update */
          num_layer {
             bindings = <
@@ -139,7 +130,16 @@
                    &kp ESC      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 /**/ &bt BT_SEL 4   &none            &bt BT_PRV    &bt BT_NXT      &bt BT_CLR
                    &sk TAB      &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &none        /**/   &kp LEFT     &kp DOWN         &kp UP        &kp RIGHT       &kp BSPC
                    &to BASE_L   &none         &none         &none         &none        /**/   &kp HOME     &kp PG_DN        &kp PG_UP     &kp END         &kp RETURN
-                 /*&            &*/           &sk RCTRL     &sk LSHFT     &sk LCMD     /**/   &to NAV_L    &sl SYM_L        &kp NUM_L    /*&             &*/
+                 /*&            &*/           &sk RCTRL     &sk LSHFT     &sk LCMD     /**/   &to NAV_L    &sl SYM_L        &to NUM_L    /*&             &*/
+            >;
+        };
+
+        sym_layer {
+            bindings = <
+                   &kp ESC      &kp LPAR      &kp RPAR      &kp ASTRK     &kp EQUAL  /**/   &kp PLUS       &kp AMPS         &kp GRAVE       &kp SQT       &kp CARET
+                   &kp TAB      &kp LBRC      &kp RBRC      &kp MINUS     &kp BSLH   /**/   &td_flsh_L     &td_dllr_D       &td_prcnt_U     &td_COLON_R   &kp BSPC
+                   &to BASE_L   &kp LBKT      &kp RBKT      &kp COMMA     &kp DOT    /**/   &kp SEMI       &kp EXCL         &kp AT          &kp HASH      &kp RETURN
+                 /*&            &*/           &sk RCTRL     &sk LSHFT     &sk LALT   /**/   &to NAV_L      &to BASE_L       &to NUM_L     /*&             &*/
             >;
         };
     };
