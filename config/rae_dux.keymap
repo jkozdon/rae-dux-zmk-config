@@ -59,6 +59,18 @@
         COMBO(underscore, &kp UNDER, 32 33, 60)
     };
 
+    behaviors {
+        lcmd_nav: lcmd_nav {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LCMD_NAV";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&sk>;
+        };
+    };
+
     // behaviors {
     //     td_q_esc: td_q_esc {
     //               compatible = "zmk,behavior-tap-dance";
@@ -107,20 +119,20 @@
 
         base_layer {
             bindings = <
-                   &kp Q        &kp W         &kp E        &kp R          &kp T      /**/   &kp Y         &kp U               &kp I         &kp O         &kp P
-                   &kp A        &kp S         &kp D        &kp F          &kp G      /**/   &kp H         &kp J               &kp K         &kp L         &kp BSPC
-                   &kp Z        &kp X         &kp C        &kp V          &kp B      /**/   &kp N         &kp M               &kp COMMA     &kp DOT       &kp RETURN
-                 /*&            &*/           &sk RCTRL    &sk LSHFT      &sk LCMD   /**/   &sk MEH       &sl SYM_L           &kp SPC     /*&             &*/
+                   &kp Q        &kp W         &kp E        &kp R          &kp T                 /**/   &kp Y         &kp U               &kp I         &kp O         &kp P
+                   &kp A        &kp S         &kp D        &kp F          &kp G                 /**/   &kp H         &kp J               &kp K         &kp L         &kp BSPC
+                   &kp Z        &kp X         &kp C        &kp V          &kp B                 /**/   &kp N         &kp M               &kp COMMA     &kp DOT       &kp RETURN
+                 /*&            &*/           &sk RCTRL    &sk LSHFT      &lcmd_nav NAV_L LCMD  /**/   &sk MEH       &sl SYM_L           &kp SPC     /*&             &*/
             >;
         };
 
         /* Need to update */
          num_layer {
             bindings = <
-                   &kp ESC      &kp LPAR      &kp RPAR      &kp ASTRK     &kp EQUAL  /**/   &kp PLUS       &kp N7           &kp N8          &kp N9        &kp CARET
-                   &kp TAB      &kp LBRC      &kp RBRC      &kp MINUS     &kp BSLH   /**/   &kp FSLH       &kp N4           &kp N5          &kp N6        &kp BSPC
-                   &none        &kp LBKT      &kp RBKT      &kp COMMA     &kp DOT    /**/   &kp N0         &kp N1           &kp N2          &kp N3        &kp RETURN
-                 /*&            &*/           &sk RCTRL     &sk LSHFT     &sk LCMD   /**/   &to NAV_L      &sl SYM_L        &kp SPC      /*&             &*/
+                   &kp ESC      &kp LPAR      &kp RPAR      &kp ASTRK     &kp EQUAL             /**/   &kp PLUS       &kp N7           &kp N8          &kp N9        &kp CARET
+                   &kp TAB      &kp LBRC      &kp RBRC      &kp MINUS     &kp BSLH              /**/   &kp FSLH       &kp N4           &kp N5          &kp N6        &kp BSPC
+                   &none        &kp LBKT      &kp RBKT      &kp COMMA     &kp DOT               /**/   &kp N0         &kp N1           &kp N2          &kp N3        &kp RETURN
+                 /*&            &*/           &sk RCTRL     &sk LSHFT     &lcmd_nav NAV_L LCMD   /**/   &to NAV_L      &sl SYM_L        &kp SPC      /*&             &*/
             >;
         };
 
