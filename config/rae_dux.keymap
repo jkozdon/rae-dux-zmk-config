@@ -59,6 +59,18 @@
         COMBO(underscore, &kp UNDER, 32 33, 60)
     };
 
+    behaviors {
+        f_nav: f_nav {
+            compatible = "zmk,behavior-hold-tap";
+            label = "F_NAV";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&mo>, <&kp>;
+        };
+    };
+
     // behaviors {
     //     td_q_esc: td_q_esc {
     //               compatible = "zmk,behavior-tap-dance";
@@ -108,7 +120,7 @@
         base_layer {
             bindings = <
                    &kp Q        &kp W         &kp E        &kp R          &kp T       /**/   &kp Y         &kp U               &kp I         &kp O         &kp P
-                   &kp A        &kp S         &kp D        &mt NAV_L F    &kp G       /**/   &kp H         &kp J               &kp K         &kp L         &kp BSPC
+                   &kp A        &kp S         &kp D        &f_nav NAV_L F &kp G       /**/   &kp H         &kp J               &kp K         &kp L         &kp BSPC
                    &kp Z        &kp X         &kp C        &kp V          &kp B       /**/   &kp N         &kp M               &kp COMMA     &kp DOT       &kp RETURN
                  /*&            &*/           &sk RCTRL    &sk LSHFT      &sk LCMD    /**/   &sk MEH       &sl SYM_L           &kp SPC     /*&             &*/
             >;
