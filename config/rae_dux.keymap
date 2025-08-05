@@ -176,7 +176,7 @@
                    &kp Q        &kp W         &kp E        &kp R          &kp T       /**/   &none         &none               &none         &none         &none
                    &kp A        &kp S         &kp D        &kp F          &kp G       /**/   &none         &none               &none         &none         &none
                    &kp Z        &kp X         &kp C        &kp V          &kp B       /**/   &none         &none               &none         &none         &none
-                 /*&            &*/           &none        &mo ONE_RIGHT  &none       /**/   &none         &none               &none       /*&             &*/
+                 /*&            &*/           &none        &mo ONE_RIGHT  &kp SPC     /**/   &none         &none               &none       /*&             &*/
             >;
         };
 
