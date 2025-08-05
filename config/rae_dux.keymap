@@ -183,10 +183,10 @@
 
         one_left_layer {
             bindings = <
-                   &kp Q        &kp W         &kp E        &kp R                 &kp T     /**/   &none         &none               &none         &none         &none
-                   &kp A        &kp S         &kp D        &kp F                 &kp G     /**/   &none         &none               &none         &none         &none
-                   &kp Z        &kp X         &kp C        &kp V                 &kp B     /**/   &none         &none               &none         &none         &none
-                 /*&            &*/           &none        &spc_or ONE_RIGHT SPC &none     /**/   &none         &none               &none       /*&             &*/
+                   &kp Q        &kp W         &kp E        &kp R                 &kp T       /**/   &none         &none               &none         &none         &none
+                   &kp A        &kp S         &kp D        &kp F                 &kp G       /**/   &none         &none               &none         &none         &none
+                   &kp Z        &kp X         &kp C        &kp V                 &kp B       /**/   &none         &none               &none         &none         &none
+                 /*&            &*/           &none        &spc_or ONE_RIGHT SPC &sk LSHFT   /**/   &none         &none               &none       /*&             &*/
             >;
         };
 
