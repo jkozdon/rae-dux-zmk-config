@@ -87,6 +87,16 @@
             quick-tap-ms = <175>;
             bindings = <&mo>, <&kp>;
         };
+
+        spc_or: spc_or {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SPC_OR";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&mo>, <&kp>;
+        };
     };
 
     // behaviors {
@@ -173,10 +183,10 @@
 
         one_left_layer {
             bindings = <
-                   &kp Q        &kp W         &kp E        &kp R          &kp T       /**/   &none         &none               &none         &none         &none
-                   &kp A        &kp S         &kp D        &kp F          &kp G       /**/   &none         &none               &none         &none         &none
-                   &kp Z        &kp X         &kp C        &kp V          &kp B       /**/   &none         &none               &none         &none         &none
-                 /*&            &*/           &none        &mo ONE_RIGHT  &kp SPC     /**/   &none         &none               &none       /*&             &*/
+                   &kp Q        &kp W         &kp E        &kp R              &kp T       /**/   &none         &none               &none         &none         &none
+                   &kp A        &kp S         &kp D        &kp F              &kp G       /**/   &none         &none               &none         &none         &none
+                   &kp Z        &kp X         &kp C        &kp V              &kp B       /**/   &none         &none               &none         &none         &none
+                 /*&            &*/           &none        &spc_or ONE_RIGHT  &none     /**/   &none         &none               &none       /*&             &*/
             >;
         };
 
