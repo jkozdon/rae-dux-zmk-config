@@ -23,6 +23,7 @@
 #define SYM_L   3
 #define ONE_LEFT  4
 #define ONE_RIGHT 5
+#define ONE_NUM   6
 
 #define MEHK(KEY) LS(LC(LA(LG(KEY))))
 #define MEH       LS(LC(LA(LMETA)))
@@ -88,9 +89,19 @@
             bindings = <&mo>, <&kp>;
         };
 
-        spc_or: spc_or {
+        spc_rt: spc_rt {
             compatible = "zmk,behavior-hold-tap";
-            label = "SPC_OR";
+            label = "SPC_RT";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        none_num: none_num {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NONE_NUM";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
@@ -181,12 +192,14 @@
             >;
         };
 
+        /*******************************************************************************************************************************************************************/
+
         one_left_layer {
             bindings = <
                    &kp Q        &kp W         &kp E        &kp R                 &kp T       /**/   &none         &none               &none         &none         &none
                    &kp A        &kp S         &kp D        &kp F                 &kp G       /**/   &none         &none               &none         &none         &none
                    &kp Z        &kp X         &kp C        &kp V                 &kp B       /**/   &none         &none               &none         &none         &none
-                 /*&            &*/           &none        &spc_or ONE_RIGHT SPC &sk LSHFT   /**/   &none         &none               &none       /*&             &*/
+                   &mo ONE_NUM &spc_rt ONE_RIGHT SPC              &none       /**/   &none         &none               &none       /*&             &*/
             >;
         };
 
@@ -195,6 +208,15 @@
                    &kp P        &kp O         &kp I        &kp U          &kp Y       /**/   &none         &none               &none         &none         &none
                    &kp BSPC     &kp L         &kp K        &kp J          &kp H       /**/   &none         &none               &none         &none         &none
                    &kp RETURN   &kp DOT       &kp COMMA    &kp M          &kp N       /**/   &none         &none               &none         &none         &none
+                 /*&            &*/           &none        &none          &none       /**/   &none         &none               &none       /*&             &*/
+            >;
+        };
+
+        one_num_layer {
+            bindings = <
+                   &none        &kp N7        &kp N8       &kp N9         &none       /**/   &none         &none               &none         &none         &none
+                   &none        &kp N4        &kp N5       &kp N6         &none       /**/   &none         &none               &none         &none         &none
+                   &kp N0       &kp N1        &kp N2       &kp N3         &none       /**/   &none         &none               &none         &none         &none
                  /*&            &*/           &none        &none          &none       /**/   &none         &none               &none       /*&             &*/
             >;
         };
