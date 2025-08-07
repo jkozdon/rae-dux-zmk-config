@@ -121,7 +121,8 @@ name: name##_sticky_mod_tap {              \
             bindings = <&mo>, <&kp>;
         };
 
-        STICKY_MOD_TAP(sk_LSHFT)
+        STICKY_MOD_TAP(sk_LSHFT_S)
+        STICKY_MOD_TAP(sk_LSHFT_E)
     };
 
     // behaviors {
@@ -211,7 +212,7 @@ name: name##_sticky_mod_tap {              \
         one_left_layer {
             bindings = <
                    &kp Q        &kp W         &kp F             &kp P                 &kp B       /**/   &none         &none               &none         &none         &none
-                   &kp A        &kp R         &sk_LSHFT LSHFT S &kp T                 &kp G       /**/   &none         &none               &none         &none         &none
+                   &kp A        &kp R         &sk_LSHFT_S LSHFT S &kp T                 &kp G       /**/   &none         &none               &none         &none         &none
                    &kp Z        &kp X         &kp C             &kp D                 &kp V       /**/   &none         &none               &none         &none         &none
                    &kp RETURN   &spc_rt ONE_RIGHT SPC  &kp BSPC       /**/   &none         &none               &none       /*&             &*/
             >;
@@ -220,7 +221,7 @@ name: name##_sticky_mod_tap {              \
         one_right_layer {
             bindings = <
                    &kp SEMI     &kp Y         &kp U        &kp L          &kp J       /**/   &none         &none               &none         &none         &none
-                   &kp O        &kp I         &kp E        &kp N          &kp M       /**/   &none         &none               &none         &none         &none
+                   &kp O        &kp I         &sk_LSHFT_E LSHFT E        &kp N          &kp M       /**/   &none         &none               &none         &none         &none
                    &kp FSLH     &kp DOT       &kp COMMA    &kp H          &kp K       /**/   &none         &none               &none         &none         &none
                  /*&            &*/           &none        &none          &none       /**/   &none         &none               &none       /*&             &*/
             >;
