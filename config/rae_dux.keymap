@@ -23,7 +23,7 @@ name: name##_sticky_mod_tap {              \
     compatible = "zmk,behavior-hold-tap";  \
     #binding-cells = <2>;                  \
     flavor = "balanced";                   \
-    tapping-term-ms = <200>;               \
+    tapping-term-ms = <175>;               \
     quick-tap-ms = <150>;                  \
     global-quick-tap;                      \
     bindings = <&sk>, <&kp>;      \
@@ -96,8 +96,8 @@ name: name##_sticky_mod_tap {              \
             label = "F_NAV";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <150>;
             bindings = <&mo>, <&kp>;
         };
 
@@ -106,8 +106,8 @@ name: name##_sticky_mod_tap {              \
             label = "SPC_RT";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <150>;
             bindings = <&mo>, <&kp>;
         };
 
@@ -116,8 +116,8 @@ name: name##_sticky_mod_tap {              \
             label = "RET_NUM";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <150>;
             bindings = <&mo>, <&kp>;
         };
 
