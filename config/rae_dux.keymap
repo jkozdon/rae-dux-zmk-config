@@ -36,7 +36,9 @@ name: name##_sticky_mod_tap {              \
 #define ONE_LEFT  4
 #define ONE_RIGHT 5
 #define ONE_NUM   6
-#define ONE_BT    7
+#define ONE_L_SYM 7
+#define ONE_R_SYM 8
+#define ONE_BT    9
 
 #define MEHK(KEY) LS(LC(LA(LG(KEY))))
 #define MEH       LS(LC(LA(LMETA)))
@@ -66,13 +68,13 @@ name: name##_sticky_mod_tap {              \
           ╰───────╮ 30  31  32 │ │ 33  34  35 ╭───────╯
                   ╰────────────╯ ╰────────────╯        */
 
-        COMBO(grave, &kp GRAVE, 1 2, 60)
-        COMBO(colon, &kp COLON, 7 8, 60)
-        COMBO(equal, &kp EQUAL, 21 22, 60)
-        COMBO(semicolon, &kp SEMI, 27 28, 60)
+        // COMBO(grave, &kp GRAVE, 1 2, 60)
+        // COMBO(colon, &kp COLON, 7 8, 60)
+        // COMBO(equal, &kp EQUAL, 21 22, 60)
+        // COMBO(semicolon, &kp SEMI, 27 28, 60)
 
-        COMBO(minus, &kp MINUS, 31 34, 60)
-        COMBO(underscore, &kp UNDER, 32 33, 60)
+        // COMBO(minus, &kp MINUS, 31 34, 60)
+        // COMBO(underscore, &kp UNDER, 32 33, 60)
 
         // QWER combo for base layer - switches to one_left
         combo_BASE_L_to_ONE_LEFT {
@@ -140,8 +142,15 @@ name: name##_sticky_mod_tap {              \
             bindings = <&mo>, <&kp>;
         };
 
-        STICKY_MOD_TAP(sk_LSHFT_S)
-        STICKY_MOD_TAP(sk_LSHFT_E)
+        // Ctrl < Option < Command < Shift
+        STICKY_MOD_TAP(sk_LCTRL_A)
+        STICKY_MOD_TAP(sk_LOPTION_R)
+        STICKY_MOD_TAP(sk_LCMD_S)
+        STICKY_MOD_TAP(sk_LSHFT_T)
+        STICKY_MOD_TAP(sk_RCTRL_O)
+        STICKY_MOD_TAP(sk_ROPTION_I)
+        STICKY_MOD_TAP(sk_RCMD_E)
+        STICKY_MOD_TAP(sk_RSHFT_N)
     };
 
     // behaviors {
@@ -231,7 +240,7 @@ name: name##_sticky_mod_tap {              \
         one_left_layer {
             bindings = <
                    &kp Q        &kp W         &kp F             &kp P                 &kp B       /**/   &none         &none               &none         &none         &none
-                   &kp A        &kp R         &sk_LSHFT_S LSHFT S &kp T                 &kp G       /**/   &none         &none               &none         &none         &none
+                   &sk_LCTRL_A LCTRL A &sk_LOPTION_R LALT R &sk_LCMD_S LCMD S &sk_LSHFT_T LSHFT T &kp G       /**/   &none         &none               &none         &none         &none
                    &kp Z        &kp X         &kp C             &kp D                 &kp V       /**/   &none         &none               &none         &none         &none
                    &ret_num ONE_NUM RETURN   &spc_rt ONE_RIGHT SPC  &kp BSPC       /**/   &none         &none               &none       /*&             &*/
             >;
@@ -239,8 +248,8 @@ name: name##_sticky_mod_tap {              \
 
         one_right_layer {
             bindings = <
-                   &kp SEMI     &kp Y         &kp U        &kp L          &kp J       /**/   &none         &none               &none         &none         &none
-                   &kp O        &kp I         &sk_LSHFT_E LSHFT E        &kp N          &kp M       /**/   &none         &none               &none         &none         &none
+                   &kp ESC      &kp Y         &kp U        &kp L          &kp J       /**/   &none         &none               &none         &none         &none
+                   &sk_RCTRL_O RCTRL O &sk_ROPTION_I RALT I &sk_RCMD_E RCMD E &sk_RSHFT_N RSHFT N &kp M       /**/   &none         &none               &none         &none         &none
                    &kp FSLH     &kp DOT       &kp COMMA    &kp H          &kp K       /**/   &none         &none               &none         &none         &none
                  /*&            &*/           &none        &none          &none       /**/   &none         &none               &none       /*&             &*/
             >;
@@ -248,31 +257,30 @@ name: name##_sticky_mod_tap {              \
 
         one_num_layer {
             bindings = <
-                   &none        &kp N7        &kp N8       &kp N9         &none       /**/   &none         &none               &none         &none         &none
-                   &none        &kp N4        &kp N5       &kp N6         &none       /**/   &none         &none               &none         &none         &none
-                   &kp N0       &kp N1        &kp N2       &kp N3         &none       /**/   &none         &none               &none         &none         &none
-                 /*&            &*/           &none        &none          &none       /**/   &none         &none               &none       /*&             &*/
+                   &kp PLUS    &kp N9        &kp N8       &kp N7         &kp EQUAL   /**/   &none         &none               &none         &none         &none
+                   &kp MINUS   &kp N6        &kp N5       &kp N4         &kp ASTRK   /**/   &none         &none               &none         &none         &none
+                   &kp FSLH    &kp N3        &kp N2       &kp N1         &kp N0      /**/   &none         &none               &none         &none         &none
+                 /*&            &*/          &none        &none          &none       /**/   &none         &none               &none       /*&             &*/
             >;
         };
 
-        // one_sym_layer1 {
-        //     bindings = <
-        //            &kp ESC      &kp LPAR      &kp RPAR      &kp ASTRK     &kp EQUAL  /**/   &none         &none            &none          &none          &none
-        //            &kp TAB      &kp LBRC      &kp RBRC      &kp MINUS     &kp BSLH   /**/   &none         &none            &none          &none          &none
-        //            &none        &kp LBKT      &kp RBKT      &kp COMMA     &kp DOT    /**/   &none         &none            &none          &none          &none
-        //          /*&            &*/           &none         &none         &none      /**/   &none         &none            &none        /*&                   &*/
-        //     >;
-        // };
+        one_left_sym_layer  {
+            bindings = <
+                   &kp TAB      &kp LT        &kp GT        &none         &kp PIPE   /**/   &none         &none            &none          &none          &none
+                   &kp EXCL     &none         &kp TILDE     &none         &kp AMPS   /**/   &none         &none            &none          &none          &none
+                   &kp BSLH     &none         &kp LBKT      &kp RBKT      &kp PRCNT  /**/   &none         &none            &none          &none          &none
+                 /*&            &*/           &none         &none         &none      /**/   &none         &none            &none        /*&                   &*/
+            >;
+        };
 
-        // one_sym_layer2 {
-        //     bindings = <
-        //            &kp CARET    &kp SQT       &kp GRAVE     &kp AMPS      &kp PLUS   /**/   &none          &none            &none           &none         &none
-        //            &none        &kp COLON     &kp PRCNT     &kp DLLR      &kp FSLH   /**/   &none          &none            &none           &none         &none
-        //            &none        &kp HASH      &kp AT        &kp EXCL      &kp SEMI   /**/   &none          &none            &none           &none         &none
-        //          /*&            &*/           &none         &none         &none      /**/   &none          &none            &none         /*&             &*/
-        //     >;
-        // };
-
+        one_right_sym_layer  {
+            bindings = <
+                   &kp GRAVE    &kp DLLR      &kp LBRC      &kp RBRC      &kp CARET  /**/   &none         &none            &none          &none          &none
+                   &kp DQT      &kp SEMI      &kp LPAR      &kp RPAR      &kp HASH   /**/   &none         &none            &none          &none          &none
+                   &kp SQT      &none         &none         &kp COLON     &kp AT     /**/   &none         &none            &none          &none          &none
+                 /*&            &*/           &none         &none         &none      /**/   &none         &none            &none        /*&                   &*/
+            >;
+        };
 
         one_bt_layer {
             bindings = <
