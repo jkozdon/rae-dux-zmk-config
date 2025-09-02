@@ -107,7 +107,7 @@ name: name##_sticky_mod_tap {              \
 
         combo_ONE_LEFT_to_NAV {
             timeout-ms = <50>;
-            bindings = <&to NAV_L>;
+            bindings = <&to ONE_NAV>;
             key-positions = <2 3>;
             layers = <ONE_LEFT>;
         };
