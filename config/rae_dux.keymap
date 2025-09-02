@@ -171,6 +171,7 @@ name: name##_sticky_mod_tap {              \
         STICKY_MOD_TAP(sk_RCMD_E)
         STICKY_MOD_TAP(sk_RSHFT_N)
         STICKY_MOD_TAP(sk_RET_MEH)
+        STICKY_MOD_TAP(sk_LCTRL_MUTE)
         STICKY_LAYER_TAP(sl_L_SYM_C)
         STICKY_LAYER_TAP(sl_R_SYM_D)
     };
@@ -306,10 +307,10 @@ name: name##_sticky_mod_tap {              \
 
         one_nav_layer {
             bindings = <
-                   &kp C_VOL_DN  &kp END       &kp PG_DN     &kp RIGHT    &kp DOWN     /**/   &none         &none            &none          &none         &none
-                   &kp C_MUTE    &none         &none         &none        &none        /**/   &none         &none            &none          &none         &none
-                   &kp C_VOL_UP  &kp HOME      &kp PG_UP     &kp LEFT     &kp UP       /**/   &none         &none            &none          &none         &none
-                 /*&            &*/            &none         &to ONE_LEFT &none        /**/   &none         &none            &none         /*&             &*/
+                   &kp C_VOL_DN                 &kp END       &kp PG_DN     &kp RIGHT    &kp DOWN     /**/   &none         &none            &none          &none         &none
+                   &sk_LCTRL_MUTE LCTRL C_MUTE  &sk LALT      &sk LCMD      &sk LSHFT    &none        /**/   &none         &none            &none          &none         &none
+                   &kp C_VOL_UP                 &kp HOME      &kp PG_UP     &kp LEFT     &kp UP       /**/   &none         &none            &none          &none         &none
+                 /*&                            &*/           &none         &to ONE_LEFT &none        /**/   &none         &none            &none         /*&             &*/
             >;
         };
 
