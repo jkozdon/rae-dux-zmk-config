@@ -29,6 +29,18 @@ name: name##_sticky_mod_tap {              \
     bindings = <&sk>, <&kp>;      \
 };
 
+#define STICKY_LAYER_TAP(name)               \
+name: name##_sticky_mod_tap {              \
+    label = #name;                         \
+    compatible = "zmk,behavior-hold-tap";  \
+    #binding-cells = <2>;                  \
+    flavor = "balanced";                   \
+    tapping-term-ms = <175>;               \
+    quick-tap-ms = <150>;                  \
+    global-quick-tap;                      \
+    bindings = <&sl>, <&kp>;      \
+};
+
 #define BASE_L  0
 #define NUM_L   1
 #define NAV_L   2
@@ -132,9 +144,9 @@ name: name##_sticky_mod_tap {              \
             bindings = <&mo>, <&kp>;
         };
 
-        ret_num: ret_num {
+        bspc_num: bspc_num {
             compatible = "zmk,behavior-hold-tap";
-            label = "RET_NUM";
+            label = "BSPC_NUM";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <175>;
@@ -151,6 +163,8 @@ name: name##_sticky_mod_tap {              \
         STICKY_MOD_TAP(sk_ROPTION_I)
         STICKY_MOD_TAP(sk_RCMD_E)
         STICKY_MOD_TAP(sk_RSHFT_N)
+        STICKY_LAYER_TAP(sl_L_SYM_C)
+        STICKY_LAYER_TAP(sl_R_SYM_D)
     };
 
     // behaviors {
@@ -239,19 +253,19 @@ name: name##_sticky_mod_tap {              \
 
         one_left_layer {
             bindings = <
-                   &kp Q        &kp W         &kp F             &kp P                 &kp B       /**/   &none         &none               &none         &none         &none
-                   &sk_LCTRL_A LCTRL A &sk_LOPTION_R LALT R &sk_LCMD_S LCMD S &sk_LSHFT_T LSHFT T &kp G       /**/   &none         &none               &none         &none         &none
-                   &kp Z        &kp X         &kp C             &kp D                 &kp V       /**/   &none         &none               &none         &none         &none
-                   &ret_num ONE_NUM RETURN   &spc_rt ONE_RIGHT SPC  &kp BSPC       /**/   &none         &none               &none       /*&             &*/
+                   &kp Q                    &kp W                  &kp F                           &kp P                    &kp B       /**/   &none         &none               &none         &none         &none
+                   &sk_LCTRL_A LCTRL A      &sk_LOPTION_R LALT R   &sk_LCMD_S LCMD S               &sk_LSHFT_T LSHFT T      &kp G       /**/   &none         &none               &none         &none         &none
+                   &kp Z                    &kp X                  &sl_L_SYM_C ONE_L_SYM C         &sl_R_SYM_D ONE_R_SYM D  &kp V       /**/   &none         &none               &none         &none         &none
+                                                                   &bspc_num ONE_NUM BSPC          &spc_rt ONE_RIGHT SPC    &kp RETURN  /**/   &none         &none               &none       /*&             &*/
             >;
         };
 
         one_right_layer {
             bindings = <
-                   &kp ESC      &kp Y         &kp U        &kp L          &kp J       /**/   &none         &none               &none         &none         &none
+                   &kp ESC             &kp Y                &kp U             &kp L               &kp J       /**/   &none         &none               &none         &none         &none
                    &sk_RCTRL_O RCTRL O &sk_ROPTION_I RALT I &sk_RCMD_E RCMD E &sk_RSHFT_N RSHFT N &kp M       /**/   &none         &none               &none         &none         &none
-                   &kp FSLH     &kp DOT       &kp COMMA    &kp H          &kp K       /**/   &none         &none               &none         &none         &none
-                 /*&            &*/           &none        &none          &none       /**/   &none         &none               &none       /*&             &*/
+                   &kp FSLH            &kp DOT              &kp COMMA         &kp H               &kp K       /**/   &none         &none               &none         &none         &none
+                 /*&                   &*/                  &none             &none               &none       /**/   &none         &none               &none       /*&             &*/
             >;
         };
 
@@ -266,19 +280,19 @@ name: name##_sticky_mod_tap {              \
 
         one_left_sym_layer  {
             bindings = <
-                   &kp TAB      &kp LT        &kp GT        &none         &kp PIPE   /**/   &none         &none            &none          &none          &none
-                   &kp EXCL     &none         &kp TILDE     &none         &kp AMPS   /**/   &none         &none            &none          &none          &none
-                   &kp BSLH     &none         &kp LBKT      &kp RBKT      &kp PRCNT  /**/   &none         &none            &none          &none          &none
+                   &kp TAB      &kp LT        &kp GT        &kp PIPE      &kp EQUAL   /**/   &none         &none            &none          &none          &none
+                   &kp MINUS    &kp SEMI      &kp TILDE     &kp CARET     &kp AMPS   /**/   &none         &none            &none          &none          &none
+                   &kp BSLH     &kp EXCL      &kp LBKT      &kp RBKT      &kp PRCNT  /**/   &none         &none            &none          &none          &none
                  /*&            &*/           &none         &none         &none      /**/   &none         &none            &none        /*&                   &*/
             >;
         };
 
         one_right_sym_layer  {
             bindings = <
-                   &kp GRAVE    &kp DLLR      &kp LBRC      &kp RBRC      &kp CARET  /**/   &none         &none            &none          &none          &none
-                   &kp DQT      &kp SEMI      &kp LPAR      &kp RPAR      &kp HASH   /**/   &none         &none            &none          &none          &none
-                   &kp SQT      &none         &none         &kp COLON     &kp AT     /**/   &none         &none            &none          &none          &none
-                 /*&            &*/           &none         &none         &none      /**/   &none         &none            &none        /*&                   &*/
+                   &kp GRAVE      &kp DLLR      &kp LBRC      &kp RBRC      &kp PLUS   /**/   &none         &none            &none          &none          &none
+                   &kp UNDERSCORE &kp COLON     &kp LPAR      &kp RPAR      &kp ASTRK  /**/   &none         &none            &none          &none          &none
+                   &kp SQT        &kp DQT       &kp HASH      &kp QMARK     &kp AT     /**/   &none         &none            &none          &none          &none
+                 /*&            &*/           &none         &none         &none        /**/   &none         &none            &none        /*&                   &*/
             >;
         };
 
