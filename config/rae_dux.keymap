@@ -49,7 +49,7 @@ name: name##_sticky_mod_tap {              \
 #define ONE_RIGHT 5
 #define ONE_NUM   6
 #define ONE_L_SYM 7
-#define ONE_R_SYM 9
+#define ONE_R_SYM 8
 #define ONE_NAV   9
 #define ONE_BT    10
 
