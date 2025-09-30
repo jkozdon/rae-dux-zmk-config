@@ -263,34 +263,34 @@ name: name##_home_row_mod {                \
                    &kp Q                    &kp W                &kp E                &kp R                  &kp T       /**/   &kp Y         &kp U                       &kp I                 &kp O                 &kp P
                    &hrm_lctrl_a LCTRL A     &hrm_lalt_s LALT S   &hrm_lcmd_d LCMD D   &hrm_lshft_f LSHFT F   &kp G       /**/   &kp H         &hrm_rshft_j RSHFT J        &hrm_rcmd_k RCMD K    &hrm_ralt_l RALT L    &hrm_rctrl_bspc RCTRL BSPC
                    &kp Z                    &kp X                &kp C                &kp V                  &kp B       /**/   &kp N         &kp M                       &kp COMMA             &kp DOT               &kp RETURN
-                 /*&                        &*/                  &sk RCTRL            &sk LSHFT              &sk LCMD    /**/   &sk MEH       &sl SYM_L                   &kp SPC             /*&                     &*/
+                 /*&                        &*/                  &to NUM_L            &sl SYM_L              &sl NAV_L   /**/   &sk MEH       &sl SYM_L                   &kp SPC             /*&                     &*/
             >;
         };
 
          num_layer {
             bindings = <
-                   &kp ESC                    &kp LPAR               &kp RPAR               &kp ASTRK                    &kp EQUAL  /**/   &kp PLUS       &kp N7                    &kp N8                 &kp N9                 &kp CARET
+                   &kp ESC                    &kp LPAR                 &kp RPAR                 &kp ASTRK                    &kp EQUAL  /**/   &kp PLUS       &kp N7                    &kp N8                 &kp N9                 &kp CARET
                    &hrm_lctrl_tab LCTRL TAB   &hrm_lalt_lbrc LALT LBRC &hrm_lcmd_rbrc LCMD RBRC &hrm_lshft_minus LSHFT MINUS &kp BSLH   /**/   &kp FSLH       &hrm_rshft_n4 RSHFT N4    &hrm_rcmd_n5 RCMD N5   &hrm_ralt_n6 RALT N6   &hrm_rctrl_bspc RCTRL BSPC
-                   &none                      &kp LBKT               &kp RBKT               &kp COMMA                    &kp DOT    /**/   &kp N0         &kp N1                    &kp N2                 &kp N3                 &kp RETURN
-                 /*&                          &*/                    &sk RCTRL              &sk LSHFT                    &sk LCMD   /**/   &to NAV_L      &sl SYM_L                 &kp SPC              /*&                       &*/
+                   &none                      &kp LBKT                 &kp RBKT                 &kp COMMA                    &kp DOT    /**/   &kp N0         &kp N1                    &kp N2                 &kp N3                 &kp RETURN
+                 /*&                          &*/                      &none                    &none                        &none      /**/   &sk MEH        &to BASE_L                &kp SPC              /*&                       &*/
             >;
         };
 
         nav_layer {
             bindings = <
-                   &kp ESC                    &bt BT_SEL 0           &bt BT_SEL 1              &bt BT_SEL 2               &bt BT_SEL 3 /**/   &bt BT_SEL 4 &none                       &bt BT_PRV               &bt BT_NXT                 &bt BT_CLR
+                   &kp ESC                    &bt BT_SEL 0               &bt BT_SEL 1                  &bt BT_SEL 2                    &bt BT_SEL 3 /**/   &bt BT_SEL 4               &none                    &bt BT_PRV           &bt BT_NXT                   &bt BT_CLR
                    &hrm_lctrl_tab LCTRL TAB   &hrm_lalt_mute LALT C_MUTE &hrm_lcmd_voldn LCMD C_VOL_DN &hrm_lshft_volup LSHFT C_VOL_UP &none        /**/   &hrm_rshft_left RSHFT LEFT &hrm_rcmd_down RCMD DOWN &hrm_ralt_up RALT UP &hrm_rctrl_right RCTRL RIGHT &hrm_rctrl_bspc RCTRL BSPC
-                   &none                      &none                  &none                     &none                      &none        /**/   &kp HOME     &kp PG_DN                   &kp PG_UP                &kp END                    &kp RETURN
-                 /*&                          &*/                    &sk RCTRL                 &sk LSHFT                  &sk LCMD     /**/   &to NAV_L    &sl SYM_L                   &to NUM_L              /*&                           &*/
+                   &none                      &none                      &none                         &none                           &none        /**/   &kp HOME                   &kp PG_DN                &kp PG_UP            &kp END                      &kp RETURN
+                 /*&                          &*/                        &none                         &none                           &none        /**/   &sk MEH                    &to BASE_L               &none              /*&                            &*/
             >;
         };
 
         sym_layer {
             bindings = <
-                   &kp ESC                    &kp LPAR               &kp RPAR               &kp ASTRK                          &kp EQUAL  /**/   &kp PLUS       &kp AMPS                 &kp GRAVE              &kp SQT                &kp CARET
+                   &kp ESC                    &kp LPAR                 &kp RPAR                 &kp ASTRK                        &kp EQUAL  /**/   &kp PLUS       &kp AMPS                   &kp GRAVE                  &kp SQT                    &kp CARET
                    &hrm_lctrl_tab LCTRL TAB   &hrm_lalt_lbrc LALT LBRC &hrm_lcmd_rbrc LCMD RBRC &hrm_lshft_minus_sym LSHFT MINUS &kp BSLH   /**/   &kp FSLH       &hrm_rshft_dllr RSHFT DLLR &hrm_rcmd_prcnt RCMD PRCNT &hrm_ralt_colon RALT COLON &hrm_rctrl_bspc RCTRL BSPC
-                   &none                      &kp LBKT               &kp RBKT               &kp COMMA                          &kp DOT    /**/   &kp SEMI       &kp EXCL                 &kp AT                 &kp HASH               &kp RETURN
-                 /*&                          &*/                    &sk RCTRL              &sk LSHFT                          &sk LALT   /**/   &to NAV_L      &to BASE_L               &to NUM_L            /*&                       &*/
+                   &none                      &kp LBKT                 &kp RBKT                 &kp COMMA                        &kp DOT    /**/   &kp SEMI       &kp EXCL                   &kp AT                     &kp HASH                   &kp RETURN
+                 /*&                          &*/                      &none                    &none                            &none      /**/   &none          &to BASE_L                 &none                    /*&                          &*/
             >;
         };
 
