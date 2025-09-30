@@ -164,52 +164,51 @@ name: name##_home_row_mod {                \
         };
 
         // Ctrl < Option < Command < Shift
-        STICKY_MOD_TAP(sk_LALT_A)
-        STICKY_MOD_TAP(sk_LCTRL_R)
-        STICKY_MOD_TAP(sk_LCMD_S)
-        STICKY_MOD_TAP(sk_LSHFT_T)
-        STICKY_MOD_TAP(sk_RALT_O)
-        STICKY_MOD_TAP(sk_RCTRL_I)
-        STICKY_MOD_TAP(sk_RCMD_E)
-        STICKY_MOD_TAP(sk_RSHFT_N)
+        STICKY_MOD_TAP(sk_A)
+        STICKY_MOD_TAP(sk_R)
+        STICKY_MOD_TAP(sk_S)
+        STICKY_MOD_TAP(sk_T)
+        STICKY_MOD_TAP(sk_O)
+        STICKY_MOD_TAP(sk_I)
+        STICKY_MOD_TAP(sk_E)
+        STICKY_MOD_TAP(sk_N)
         STICKY_MOD_TAP(sk_RET_MEH)
-        STICKY_MOD_TAP(sk_LALT_MUTE)
+        STICKY_MOD_TAP(sk_MUTE)
         STICKY_LAYER_TAP(sl_L_SYM_C)
         STICKY_LAYER_TAP(sl_R_SYM_D)
 
-        // Home row mods for base_layer (COGS order)
-        HOME_ROW_MOD(hrm_lctrl_a)   // A with left ctrl
-        HOME_ROW_MOD(hrm_lalt_s)    // S with left alt  
-        HOME_ROW_MOD(hrm_lcmd_d)    // D with left cmd
-        HOME_ROW_MOD(hrm_lshft_f)   // F with left shift
-        HOME_ROW_MOD(hrm_rshft_j)   // J with right shift
-        HOME_ROW_MOD(hrm_rcmd_k)    // K with right cmd
-        HOME_ROW_MOD(hrm_ralt_l)    // L with right alt
-        HOME_ROW_MOD(hrm_rctrl_bspc)// BSPC with right ctrl
+        // Home row mods for base_layer
+        HOME_ROW_MOD(hrm_a)    // A with
+        HOME_ROW_MOD(hrm_s)    // S with
+        HOME_ROW_MOD(hrm_d)    // D with
+        HOME_ROW_MOD(hrm_f)    // F with
+        HOME_ROW_MOD(hrm_j)    // J with
+        HOME_ROW_MOD(hrm_k)    // K with
+        HOME_ROW_MOD(hrm_l)    // L with
+        HOME_ROW_MOD(hrm_bspc)// BSPC with
 
         // Home row mods for num_layer
-        HOME_ROW_MOD(hrm_lctrl_tab) // TAB with left ctrl
-        HOME_ROW_MOD(hrm_lalt_lbrc) // LBRC with left alt
-        HOME_ROW_MOD(hrm_lcmd_rbrc) // RBRC with left cmd  
-        HOME_ROW_MOD(hrm_lshft_minus) // MINUS with left shift
-        HOME_ROW_MOD(hrm_rshft_n4)  // N4 with right shift
-        HOME_ROW_MOD(hrm_rcmd_n5)   // N5 with right cmd
-        HOME_ROW_MOD(hrm_ralt_n6)   // N6 with right alt
+        HOME_ROW_MOD(hrm_tab)   // TAB with
+        HOME_ROW_MOD(hrm_rbrc)  // LBRC with
+        HOME_ROW_MOD(hrm_lbrc)  // RBRC with
+        HOME_ROW_MOD(hrm_minus) // MINUS with
+        HOME_ROW_MOD(hrm_n4)    // N4 with
+        HOME_ROW_MOD(hrm_n5)    // N5 with
+        HOME_ROW_MOD(hrm_n6)    // N6 with
 
-        // Home row mods for sym_layer  
-        HOME_ROW_MOD(hrm_lshft_minus_sym) // MINUS with left shift (sym layer)
-        HOME_ROW_MOD(hrm_rshft_dllr)    // DLLR with right shift
-        HOME_ROW_MOD(hrm_rcmd_prcnt)    // PRCNT with right cmd
-        HOME_ROW_MOD(hrm_ralt_colon)    // COLON with right alt
+        // Home row mods for sym_layer
+        HOME_ROW_MOD(hrm_minus_sym) // MINUS with (sym layer)
+        HOME_ROW_MOD(hrm_dllr)      // DLLR with
+        HOME_ROW_MOD(hrm_prcnt)     // PRCNT with
+        HOME_ROW_MOD(hrm_colon)     // COLON with
 
         // Home row mods for nav_layer
-        HOME_ROW_MOD(hrm_lalt_mute)     // C_MUTE with left alt
-        HOME_ROW_MOD(hrm_lcmd_voldn)    // C_VOL_DN with left cmd
-        HOME_ROW_MOD(hrm_lshft_volup)   // C_VOL_UP with left shift
-        HOME_ROW_MOD(hrm_rshft_left)    // LEFT with right shift
-        HOME_ROW_MOD(hrm_rcmd_down)     // DOWN with right cmd
-        HOME_ROW_MOD(hrm_ralt_up)       // UP with right alt
-        HOME_ROW_MOD(hrm_rctrl_right)   // RIGHT with right ctrl
+        HOME_ROW_MOD(hrm_mute)    // C_MUTE with
+        HOME_ROW_MOD(hrm_voldn)   // C_VOL_DN with
+        HOME_ROW_MOD(hrm_volup)   // C_VOL_UP with
+        HOME_ROW_MOD(hrm_down)     // DOWN with
+        HOME_ROW_MOD(hrm_up)       // UP with
+        HOME_ROW_MOD(hrm_right)   // RIGHT with
     };
 
     // behaviors {
@@ -260,37 +259,37 @@ name: name##_home_row_mod {                \
 
         base_layer {
             bindings = <
-                   &kp Q                    &kp W                &kp E                &kp R                  &kp T       /**/   &kp Y         &kp U                       &kp I                 &kp O                 &kp P
-                   &hrm_lctrl_a LCTRL A     &hrm_lalt_s LALT S   &hrm_lcmd_d LCMD D   &hrm_lshft_f LSHFT F   &kp G       /**/   &kp H         &hrm_rshft_j RSHFT J        &hrm_rcmd_k RCMD K    &hrm_ralt_l RALT L    &hrm_rctrl_bspc RCTRL BSPC
-                   &kp Z                    &kp X                &kp C                &kp V                  &kp B       /**/   &kp N         &kp M                       &kp COMMA             &kp DOT               &kp RETURN
-                 /*&                        &*/                  &to NUM_L            &sl SYM_L              &sl NAV_L   /**/   &sk MEH       &sl SYM_L                   &kp SPC             /*&                     &*/
+                   &kp Q              &kp W           &kp E            &kp R            &kp T       /**/   &kp Y         &kp U                 &kp I            &kp O            &kp P
+                   &hrm_a LALT A      &hrm_s LCMD S   &hrm_d LCTRL D   &hrm_f LSHFT F   &kp G       /**/   &kp H         &hrm_j RSHFT J        &hrm_k RCTRL K   &hrm_l RCMD L    &hrm_bspc RALT BSPC
+                   &kp Z              &kp X           &kp C            &kp V            &kp B       /**/   &kp N         &kp M                 &kp COMMA        &kp DOT          &kp RETURN
+                 /*&                  &*/             &to NUM_L        &sl SYM_L        &sl NAV_L   /**/   &sk MEH       &sl SYM_L             &kp SPC        /*&                &*/
             >;
         };
 
          num_layer {
             bindings = <
-                   &kp ESC                    &kp LPAR                 &kp RPAR                 &kp ASTRK                    &kp EQUAL  /**/   &kp PLUS       &kp N7                    &kp N8                 &kp N9                 &kp CARET
-                   &hrm_lctrl_tab LCTRL TAB   &hrm_lalt_lbrc LALT LBRC &hrm_lcmd_rbrc LCMD RBRC &hrm_lshft_minus LSHFT MINUS &kp BSLH   /**/   &kp FSLH       &hrm_rshft_n4 RSHFT N4    &hrm_rcmd_n5 RCMD N5   &hrm_ralt_n6 RALT N6   &hrm_rctrl_bspc RCTRL BSPC
-                   &none                      &kp LBKT                 &kp RBKT                 &kp COMMA                    &kp DOT    /**/   &kp N0         &kp N1                    &kp N2                 &kp N3                 &kp RETURN
-                 /*&                          &*/                      &none                    &none                        &none      /**/   &sk MEH        &to BASE_L                &kp SPC              /*&                       &*/
+                   &kp ESC              &kp LPAR            &kp RPAR             &kp ASTRK              &kp EQUAL  /**/   &kp PLUS       &kp N7              &kp N8            &kp N9            &kp CARET
+                   &hrm_tab LALT TAB    &hrm_lbrc LCMD LBRC &hrm_rbrc LCTRL RBRC &hrm_minus LSHFT MINUS &kp BSLH   /**/   &kp FSLH       &hrm_n4 RSHFT N4    &hrm_n5 RCTRL N5  &hrm_n6 RCMD N6   &hrm_bspc RALT BSPC
+                   &none                &kp LBKT            &kp RBKT             &kp COMMA              &kp DOT    /**/   &kp N0         &kp N1              &kp N2            &kp N3            &kp RETURN
+                 /*&                    &*/                 &none                &none                  &none      /**/   &sk MEH        &to BASE_L          &kp SPC         /*&                 &*/
             >;
         };
 
         nav_layer {
             bindings = <
-                   &kp ESC                    &bt BT_SEL 0               &bt BT_SEL 1                  &bt BT_SEL 2                    &bt BT_SEL 3 /**/   &bt BT_SEL 4               &none                    &bt BT_PRV           &bt BT_NXT                   &bt BT_CLR
-                   &hrm_lctrl_tab LCTRL TAB   &hrm_lalt_mute LALT C_MUTE &hrm_lcmd_voldn LCMD C_VOL_DN &hrm_lshft_volup LSHFT C_VOL_UP &none        /**/   &hrm_rshft_left RSHFT LEFT &hrm_rcmd_down RCMD DOWN &hrm_ralt_up RALT UP &hrm_rctrl_right RCTRL RIGHT &hrm_rctrl_bspc RCTRL BSPC
-                   &none                      &none                      &none                         &none                           &none        /**/   &kp HOME                   &kp PG_DN                &kp PG_UP            &kp END                      &kp RETURN
-                 /*&                          &*/                        &none                         &none                           &none        /**/   &sk MEH                    &to BASE_L               &none              /*&                            &*/
+                   &kp ESC              &bt BT_SEL 0          &bt BT_SEL 1              &bt BT_SEL 2              &bt BT_SEL 3 /**/   &bt BT_SEL 4   &none                 &bt BT_PRV       &bt BT_NXT            &bt BT_CLR
+                   &hrm_tab LALT TAB    &hrm_mute LCMD C_MUTE &hrm_voldn LCTRL C_VOL_DN &hrm_volup LSHFT C_VOL_UP &none        /**/   &kp LEFT       &hrm_down RSHIFT DOWN &hrm_up RCTRL UP &hrm_right RCMD RIGHT &hrm_bspc RALT BSPC
+                   &none                &none                 &none                     &none                     &none        /**/   &kp HOME       &kp PG_DN             &kp PG_UP        &kp END               &kp RETURN
+                 /*&                    &*/                   &none                     &none                     &none        /**/   &sk MEH        &to BASE_L            &none          /*&                     &*/
             >;
         };
 
         sym_layer {
             bindings = <
-                   &kp ESC                    &kp LPAR                 &kp RPAR                 &kp ASTRK                        &kp EQUAL  /**/   &kp PLUS       &kp AMPS                   &kp GRAVE                  &kp SQT                    &kp CARET
-                   &hrm_lctrl_tab LCTRL TAB   &hrm_lalt_lbrc LALT LBRC &hrm_lcmd_rbrc LCMD RBRC &hrm_lshft_minus_sym LSHFT MINUS &kp BSLH   /**/   &kp FSLH       &hrm_rshft_dllr RSHFT DLLR &hrm_rcmd_prcnt RCMD PRCNT &hrm_ralt_colon RALT COLON &hrm_rctrl_bspc RCTRL BSPC
-                   &none                      &kp LBKT                 &kp RBKT                 &kp COMMA                        &kp DOT    /**/   &kp SEMI       &kp EXCL                   &kp AT                     &kp HASH                   &kp RETURN
-                 /*&                          &*/                      &none                    &none                            &none      /**/   &none          &to BASE_L                 &none                    /*&                          &*/
+                   &kp ESC              &kp LPAR            &kp RPAR             &kp ASTRK                  &kp EQUAL  /**/   &kp PLUS       &kp AMPS             &kp GRAVE              &kp SQT               &kp CARET
+                   &hrm_tab LALT TAB    &hrm_lbrc LCMD LBRC &hrm_rbrc LCTRL RBRC &hrm_minus_sym LSHFT MINUS &kp BSLH   /**/   &kp FSLH       &hrm_dllr RSHFT DLLR &hrm_prcnt RCTRL PRCNT &hrm_colon RCMD COLON &hrm_bspc RALT BSPC
+                   &none                &kp LBKT            &kp RBKT             &kp COMMA                  &kp DOT    /**/   &kp SEMI       &kp EXCL             &kp AT                 &kp HASH              &kp RETURN
+                 /*&                    &*/                 &none                &none                      &none      /**/   &none          &to BASE_L           &none                /*&                     &*/
             >;
         };
 
@@ -298,19 +297,19 @@ name: name##_home_row_mod {                \
 
         one_left_layer {
             bindings = <
-                   &kp Q                   &kp W                  &kp F                           &kp P                    &kp B                   /**/   &none         &none               &none         &none         &none
-                   &sk_LALT_A LALT A       &sk_LCTRL_R LCTRL R    &sk_LCMD_S LCMD S               &sk_LSHFT_T LSHFT T      &kp G                   /**/   &none         &none               &none         &none         &none
-                   &kp Z                   &kp X                  &sl_L_SYM_C ONE_L_SYM C         &sl_R_SYM_D ONE_R_SYM D  &kp V                   /**/   &none         &none               &none         &none         &none
-                 /*&                       &*/                    &bspc_num ONE_NUM BSPC          &spc_rt ONE_RIGHT SPC    &sk_RET_MEH MEH RETURN  /**/   &none         &none               &none       /*&             &*/
+                   &kp Q              &kp W            &kp F                      &kp P                    &kp B                   /**/   &none         &none               &none         &none         &none
+                   &sk_A LALT A       &sk_R LCMD R     &sk_S LCTRL S              &sk_T LSHFT T            &kp G                   /**/   &none         &none               &none         &none         &none
+                   &kp Z              &kp X            &sl_L_SYM_C ONE_L_SYM C    &sl_R_SYM_D ONE_R_SYM D  &kp V                   /**/   &none         &none               &none         &none         &none
+                 /*&                  &*/              &bspc_num ONE_NUM BSPC     &spc_rt ONE_RIGHT SPC    &sk_RET_MEH MEH RETURN  /**/   &none         &none               &none       /*&             &*/
             >;
         };
 
         one_right_layer {
             bindings = <
-                   &kp ESC           &kp Y                &kp U             &kp L               &kp J       /**/   &none         &none               &none         &none         &none
-                   &sk_RALT_O RALT O &sk_RCTRL_I RCTRL I  &sk_RCMD_E RCMD E &sk_RSHFT_N RSHFT N &kp M       /**/   &none         &none               &none         &none         &none
-                   &kp FSLH          &kp DOT              &kp COMMA         &kp H               &kp K       /**/   &none         &none               &none         &none         &none
-                 /*&                 &*/                  &none             &none               &none       /**/   &none         &none               &none       /*&             &*/
+                   &kp ESC      &kp Y         &kp U         &kp L         &kp J       /**/   &none         &none               &none         &none         &none
+                   &sk_O RALT O &sk_I RCMD I  &sk_E RCTRL E &sk_N RSHFT N &kp M       /**/   &none         &none               &none         &none         &none
+                   &kp FSLH     &kp DOT       &kp COMMA     &kp H         &kp K       /**/   &none         &none               &none         &none         &none
+                 /*&            &*/           &none         &none         &none       /**/   &none         &none               &none       /*&             &*/
             >;
         };
 
@@ -326,9 +325,9 @@ name: name##_home_row_mod {                \
         one_left_sym_layer  {
             bindings = <
                    &kp TAB      &kp LT        &kp GT        &kp PIPE      &kp EQUAL   /**/   &none         &none            &none          &none          &none
-                   &kp MINUS    &kp SEMI      &kp TILDE     &kp CARET     &kp AMPS   /**/   &none         &none            &none          &none          &none
-                   &kp BSLH     &kp EXCL      &kp LBKT      &kp RBKT      &kp PRCNT  /**/   &none         &none            &none          &none          &none
-                 /*&            &*/           &none         &none         &none      /**/   &none         &none            &none        /*&                   &*/
+                   &kp MINUS    &kp SEMI      &kp TILDE     &kp CARET     &kp AMPS    /**/   &none         &none            &none          &none          &none
+                   &kp BSLH     &kp EXCL      &kp LBKT      &kp RBKT      &kp PRCNT   /**/   &none         &none            &none          &none          &none
+                 /*&            &*/           &none         &none         &none       /**/   &none         &none            &none        /*&                   &*/
             >;
         };
 
@@ -337,16 +336,16 @@ name: name##_home_row_mod {                \
                    &kp GRAVE      &kp DLLR      &kp LBRC      &kp RBRC      &kp PLUS   /**/   &none         &none            &none          &none          &none
                    &kp UNDERSCORE &kp COLON     &kp LPAR      &kp RPAR      &kp ASTRK  /**/   &none         &none            &none          &none          &none
                    &kp SQT        &kp DQT       &kp HASH      &kp QMARK     &kp AT     /**/   &none         &none            &none          &none          &none
-                /*&               &*/           &none         &none         &none        /**/   &none         &none            &none        /*&                   &*/
+                /*&               &*/           &none         &none         &none      /**/   &none         &none            &none        /*&              &*/
             >;
         };
 
         one_nav_layer {
             bindings = <
-                   &kp C_VOL_DN               &kp END       &kp PG_DN     &kp RIGHT    &kp DOWN     /**/   &none         &none            &none          &none         &none
-                   &sk_LALT_MUTE LALT C_MUTE  &sk LCTRL     &sk LCMD      &sk LSHFT    &none        /**/   &none         &none            &none          &none         &none
-                   &kp C_VOL_UP               &kp HOME      &kp PG_UP     &kp LEFT     &kp UP       /**/   &none         &none            &none          &none         &none
-                 /*&                          &*/           &none         &to ONE_LEFT &none        /**/   &none         &none            &none         /*&             &*/
+                   &kp C_VOL_DN          &kp END       &kp PG_DN     &kp RIGHT    &kp DOWN     /**/   &none         &none            &none          &none         &none
+                   &sk_MUTE LALT C_MUTE  &sk LCTRL     &sk LCMD      &sk LSHFT    &none        /**/   &none         &none            &none          &none         &none
+                   &kp C_VOL_UP          &kp HOME      &kp PG_UP     &kp LEFT     &kp UP       /**/   &none         &none            &none          &none         &none
+                 /*&                     &*/           &none         &to ONE_LEFT &none        /**/   &none         &none            &none        /*&             &*/
             >;
         };
 
@@ -356,7 +355,7 @@ name: name##_home_row_mod {                \
                    &bt BT_CLR    &none         &none         &none        &none        /**/   &none         &none            &none          &none         &none
                    &none         &none         &none         &none        &none        /**/   &none         &none            &none          &none         &none
                    &none         &none         &none         &none        &none        /**/   &none         &none            &none          &none         &none
-                 /*&            &*/            &none         &none        &none        /**/   &none         &none            &none         /*&             &*/
+                 /*&            &*/            &none         &none        &none        /**/   &none         &none            &none        /*&             &*/
             >;
         };
     };
