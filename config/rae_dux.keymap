@@ -41,6 +41,18 @@ name: name##_sticky_mod_tap {              \
     bindings = <&sl>, <&kp>;      \
 };
 
+#define HOME_ROW_MOD(name)                 \
+name: name##_home_row_mod {                \
+    label = #name;                         \
+    compatible = "zmk,behavior-hold-tap";  \
+    #binding-cells = <2>;                  \
+    flavor = "tap-preferred";              \
+    tapping-term-ms = <200>;               \
+    quick-tap-ms = <175>;                  \
+    global-quick-tap;                      \
+    bindings = <&kp>, <&kp>;               \
+};
+
 #define BASE_L  0
 #define NUM_L   1
 #define NAV_L   2
@@ -131,16 +143,6 @@ name: name##_sticky_mod_tap {              \
     };
 
     behaviors {
-        f_nav: f_nav {
-            compatible = "zmk,behavior-hold-tap";
-            label = "F_NAV";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <175>;
-            quick-tap-ms = <150>;
-            bindings = <&mo>, <&kp>;
-        };
-
         spc_rt: spc_rt {
             compatible = "zmk,behavior-hold-tap";
             label = "SPC_RT";
@@ -174,6 +176,40 @@ name: name##_sticky_mod_tap {              \
         STICKY_MOD_TAP(sk_LALT_MUTE)
         STICKY_LAYER_TAP(sl_L_SYM_C)
         STICKY_LAYER_TAP(sl_R_SYM_D)
+
+        // Home row mods for base_layer (COGS order)
+        HOME_ROW_MOD(hrm_lctrl_a)   // A with left ctrl
+        HOME_ROW_MOD(hrm_lalt_s)    // S with left alt  
+        HOME_ROW_MOD(hrm_lcmd_d)    // D with left cmd
+        HOME_ROW_MOD(hrm_lshft_f)   // F with left shift
+        HOME_ROW_MOD(hrm_rshft_j)   // J with right shift
+        HOME_ROW_MOD(hrm_rcmd_k)    // K with right cmd
+        HOME_ROW_MOD(hrm_ralt_l)    // L with right alt
+        HOME_ROW_MOD(hrm_rctrl_bspc)// BSPC with right ctrl
+
+        // Home row mods for num_layer
+        HOME_ROW_MOD(hrm_lctrl_tab) // TAB with left ctrl
+        HOME_ROW_MOD(hrm_lalt_lbrc) // LBRC with left alt
+        HOME_ROW_MOD(hrm_lcmd_rbrc) // RBRC with left cmd  
+        HOME_ROW_MOD(hrm_lshft_minus) // MINUS with left shift
+        HOME_ROW_MOD(hrm_rshft_n4)  // N4 with right shift
+        HOME_ROW_MOD(hrm_rcmd_n5)   // N5 with right cmd
+        HOME_ROW_MOD(hrm_ralt_n6)   // N6 with right alt
+
+        // Home row mods for sym_layer  
+        HOME_ROW_MOD(hrm_lshft_minus_sym) // MINUS with left shift (sym layer)
+        HOME_ROW_MOD(hrm_rshft_dllr)    // DLLR with right shift
+        HOME_ROW_MOD(hrm_rcmd_prcnt)    // PRCNT with right cmd
+        HOME_ROW_MOD(hrm_ralt_colon)    // COLON with right alt
+
+        // Home row mods for nav_layer
+        HOME_ROW_MOD(hrm_lalt_mute)     // C_MUTE with left alt
+        HOME_ROW_MOD(hrm_lcmd_voldn)    // C_VOL_DN with left cmd
+        HOME_ROW_MOD(hrm_lshft_volup)   // C_VOL_UP with left shift
+        HOME_ROW_MOD(hrm_rshft_left)    // LEFT with right shift
+        HOME_ROW_MOD(hrm_rcmd_down)     // DOWN with right cmd
+        HOME_ROW_MOD(hrm_ralt_up)       // UP with right alt
+        HOME_ROW_MOD(hrm_rctrl_right)   // RIGHT with right ctrl
     };
 
     // behaviors {
@@ -224,37 +260,37 @@ name: name##_sticky_mod_tap {              \
 
         base_layer {
             bindings = <
-                   &kp Q        &kp W         &kp E        &kp R          &kp T       /**/   &kp Y         &kp U               &kp I         &kp O         &kp P
-                   &kp A        &kp S         &kp D        &f_nav NAV_L F &kp G       /**/   &kp H         &kp J               &kp K         &kp L         &kp BSPC
-                   &kp Z        &kp X         &kp C        &kp V          &kp B       /**/   &kp N         &kp M               &kp COMMA     &kp DOT       &kp RETURN
-                 /*&            &*/           &sk RCTRL    &sk LSHFT      &sk LCMD    /**/   &sk MEH       &sl SYM_L           &kp SPC     /*&             &*/
+                   &kp Q                    &kp W                &kp E                &kp R                  &kp T       /**/   &kp Y         &kp U                       &kp I                 &kp O                 &kp P
+                   &hrm_lctrl_a LCTRL A     &hrm_lalt_s LALT S   &hrm_lcmd_d LCMD D   &hrm_lshft_f LSHFT F   &kp G       /**/   &kp H         &hrm_rshft_j RSHFT J        &hrm_rcmd_k RCMD K    &hrm_ralt_l RALT L    &hrm_rctrl_bspc RCTRL BSPC
+                   &kp Z                    &kp X                &kp C                &kp V                  &kp B       /**/   &kp N         &kp M                       &kp COMMA             &kp DOT               &kp RETURN
+                 /*&                        &*/                  &sk RCTRL            &sk LSHFT              &sk LCMD    /**/   &sk MEH       &sl SYM_L                   &kp SPC             /*&                     &*/
             >;
         };
 
          num_layer {
             bindings = <
-                   &kp ESC      &kp LPAR      &kp RPAR      &kp ASTRK     &kp EQUAL  /**/   &kp PLUS       &kp N7           &kp N8          &kp N9        &kp CARET
-                   &kp TAB      &kp LBRC      &kp RBRC      &kp MINUS     &kp BSLH   /**/   &kp FSLH       &kp N4           &kp N5          &kp N6        &kp BSPC
-                   &none        &kp LBKT      &kp RBKT      &kp COMMA     &kp DOT    /**/   &kp N0         &kp N1           &kp N2          &kp N3        &kp RETURN
-                 /*&            &*/           &sk RCTRL     &sk LSHFT     &sk LCMD   /**/   &to NAV_L      &sl SYM_L        &kp SPC      /*&             &*/
+                   &kp ESC                    &kp LPAR               &kp RPAR               &kp ASTRK                    &kp EQUAL  /**/   &kp PLUS       &kp N7                    &kp N8                 &kp N9                 &kp CARET
+                   &hrm_lctrl_tab LCTRL TAB   &hrm_lalt_lbrc LALT LBRC &hrm_lcmd_rbrc LCMD RBRC &hrm_lshft_minus LSHFT MINUS &kp BSLH   /**/   &kp FSLH       &hrm_rshft_n4 RSHFT N4    &hrm_rcmd_n5 RCMD N5   &hrm_ralt_n6 RALT N6   &hrm_rctrl_bspc RCTRL BSPC
+                   &none                      &kp LBKT               &kp RBKT               &kp COMMA                    &kp DOT    /**/   &kp N0         &kp N1                    &kp N2                 &kp N3                 &kp RETURN
+                 /*&                          &*/                    &sk RCTRL              &sk LSHFT                    &sk LCMD   /**/   &to NAV_L      &sl SYM_L                 &kp SPC              /*&                       &*/
             >;
         };
 
         nav_layer {
             bindings = <
-                   &kp ESC      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 /**/   &bt BT_SEL 4 &none            &bt BT_PRV    &bt BT_NXT      &bt BT_CLR
-                   &sk TAB      &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &none        /**/   &kp LEFT     &kp DOWN         &kp UP        &kp RIGHT       &kp BSPC
-                   &none        &none         &none         &none         &none        /**/   &kp HOME     &kp PG_DN        &kp PG_UP     &kp END         &kp RETURN
-                 /*&            &*/           &sk RCTRL     &sk LSHFT     &sk LCMD     /**/   &to NAV_L    &sl SYM_L        &to NUM_L    /*&             &*/
+                   &kp ESC                    &bt BT_SEL 0           &bt BT_SEL 1              &bt BT_SEL 2               &bt BT_SEL 3 /**/   &bt BT_SEL 4 &none                       &bt BT_PRV               &bt BT_NXT                 &bt BT_CLR
+                   &hrm_lctrl_tab LCTRL TAB   &hrm_lalt_mute LALT C_MUTE &hrm_lcmd_voldn LCMD C_VOL_DN &hrm_lshft_volup LSHFT C_VOL_UP &none        /**/   &hrm_rshft_left RSHFT LEFT &hrm_rcmd_down RCMD DOWN &hrm_ralt_up RALT UP &hrm_rctrl_right RCTRL RIGHT &hrm_rctrl_bspc RCTRL BSPC
+                   &none                      &none                  &none                     &none                      &none        /**/   &kp HOME     &kp PG_DN                   &kp PG_UP                &kp END                    &kp RETURN
+                 /*&                          &*/                    &sk RCTRL                 &sk LSHFT                  &sk LCMD     /**/   &to NAV_L    &sl SYM_L                   &to NUM_L              /*&                           &*/
             >;
         };
 
         sym_layer {
             bindings = <
-                   &kp ESC      &kp LPAR      &kp RPAR      &kp ASTRK     &kp EQUAL  /**/   &kp PLUS       &kp AMPS         &kp GRAVE       &kp SQT       &kp CARET
-                   &kp TAB      &kp LBRC      &kp RBRC      &kp MINUS     &kp BSLH   /**/   &kp FSLH       &kp DLLR         &kp PRCNT       &kp COLON     &kp BSPC
-                   &none        &kp LBKT      &kp RBKT      &kp COMMA     &kp DOT    /**/   &kp SEMI       &kp EXCL         &kp AT          &kp HASH      &kp RETURN
-                 /*&            &*/           &sk RCTRL     &sk LSHFT     &sk LALT   /**/   &to NAV_L      &to BASE_L       &to NUM_L     /*&             &*/
+                   &kp ESC                    &kp LPAR               &kp RPAR               &kp ASTRK                          &kp EQUAL  /**/   &kp PLUS       &kp AMPS                 &kp GRAVE              &kp SQT                &kp CARET
+                   &hrm_lctrl_tab LCTRL TAB   &hrm_lalt_lbrc LALT LBRC &hrm_lcmd_rbrc LCMD RBRC &hrm_lshft_minus_sym LSHFT MINUS &kp BSLH   /**/   &kp FSLH       &hrm_rshft_dllr RSHFT DLLR &hrm_rcmd_prcnt RCMD PRCNT &hrm_ralt_colon RALT COLON &hrm_rctrl_bspc RCTRL BSPC
+                   &none                      &kp LBKT               &kp RBKT               &kp COMMA                          &kp DOT    /**/   &kp SEMI       &kp EXCL                 &kp AT                 &kp HASH               &kp RETURN
+                 /*&                          &*/                    &sk RCTRL              &sk LSHFT                          &sk LALT   /**/   &to NAV_L      &to BASE_L               &to NUM_L            /*&                       &*/
             >;
         };
 
