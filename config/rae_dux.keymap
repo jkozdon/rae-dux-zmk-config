@@ -57,13 +57,6 @@ name: name##_home_row_mod {                \
 #define NUM_L   1
 #define NAV_L   2
 #define SYM_L   3
-#define ONE_LEFT  4
-#define ONE_RIGHT 5
-#define ONE_NUM   6
-#define ONE_L_SYM 7
-#define ONE_R_SYM 8
-#define ONE_NAV   9
-#define ONE_BT    10
 
 #define MEHK(KEY) LS(LC(LA(LG(KEY))))
 #define MEH       LS(LC(LA(LMETA)))
@@ -101,45 +94,6 @@ name: name##_home_row_mod {                \
         // COMBO(minus, &kp MINUS, 31 34, 60)
         // COMBO(underscore, &kp UNDER, 32 33, 60)
 
-        // QWER combo for base layer - switches to one_left
-        combo_BASE_L_to_ONE_LEFT {
-            timeout-ms = <50>;
-            bindings = <&to ONE_LEFT>;
-            key-positions = <0 1 2 3>;
-            layers = <BASE_L>;
-        };
-
-        // QWER combo for one_left layer - switches back to base
-        combo_ONE_LEFT_to_BASE {
-            timeout-ms = <50>;
-            bindings = <&to BASE_L>;
-            key-positions = <0 1 2 3>;
-            layers = <ONE_LEFT>;
-        };
-
-        combo_ONE_LEFT_to_NAV {
-            timeout-ms = <50>;
-            bindings = <&to ONE_NAV>;
-            key-positions = <2 3>;
-            layers = <ONE_LEFT>;
-        };
-
-        // QWER combo for one_left layer - switches back to base
-        combo_ONE_LEFT_to_ONE_BT {
-            timeout-ms = <50>;
-            bindings = <&to ONE_BT>;
-            key-positions = <0 1 2 4>;
-            layers = <ONE_LEFT>;
-        };
-
-
-        // QWER combo for one_left layer - switches back to base
-        combo_ONE_BT_to_ONE_LEFT {
-            timeout-ms = <50>;
-            bindings = <&to ONE_LEFT>;
-            key-positions = <0 1 2 4>;
-            layers = <ONE_BT>;
-        };
     };
 
     behaviors {
@@ -290,72 +244,6 @@ name: name##_home_row_mod {                \
                    &hrm_tab LALT TAB    &hrm_lbrc LCMD LBRC &hrm_rbrc LCTRL RBRC &hrm_minus_sym LSHFT MINUS &kp BSLH   /**/   &kp FSLH       &hrm_dllr RSHFT DLLR &hrm_prcnt RCTRL PRCNT &hrm_colon RCMD COLON &hrm_bspc RALT BSPC
                    &none                &kp LBKT            &kp RBKT             &kp COMMA                  &kp DOT    /**/   &kp SEMI       &kp EXCL             &kp AT                 &kp HASH              &kp RETURN
                  /*&                    &*/                 &none                &none                      &none      /**/   &none          &to BASE_L           &none                /*&                     &*/
-            >;
-        };
-
-        /*******************************************************************************************************************************************************************/
-
-        one_left_layer {
-            bindings = <
-                   &kp Q              &kp W            &kp F                      &kp P                    &kp B                   /**/   &none         &none               &none         &none         &none
-                   &sk_A LALT A       &sk_R LCMD R     &sk_S LCTRL S              &sk_T LSHFT T            &kp G                   /**/   &none         &none               &none         &none         &none
-                   &kp Z              &kp X            &sl_L_SYM_C ONE_L_SYM C    &sl_R_SYM_D ONE_R_SYM D  &kp V                   /**/   &none         &none               &none         &none         &none
-                 /*&                  &*/              &bspc_num ONE_NUM BSPC     &spc_rt ONE_RIGHT SPC    &sk_RET_MEH MEH RETURN  /**/   &none         &none               &none       /*&             &*/
-            >;
-        };
-
-        one_right_layer {
-            bindings = <
-                   &kp ESC      &kp Y         &kp U         &kp L         &kp J       /**/   &none         &none               &none         &none         &none
-                   &sk_O RALT O &sk_I RCMD I  &sk_E RCTRL E &sk_N RSHFT N &kp M       /**/   &none         &none               &none         &none         &none
-                   &kp FSLH     &kp DOT       &kp COMMA     &kp H         &kp K       /**/   &none         &none               &none         &none         &none
-                 /*&            &*/           &none         &none         &none       /**/   &none         &none               &none       /*&             &*/
-            >;
-        };
-
-        one_num_layer {
-            bindings = <
-                   &kp PLUS    &kp N9        &kp N8       &kp N7         &kp EQUAL   /**/   &none         &none               &none         &none         &none
-                   &kp MINUS   &kp N6        &kp N5       &kp N4         &kp ASTRK   /**/   &none         &none               &none         &none         &none
-                   &kp FSLH    &kp N3        &kp N2       &kp N1         &kp N0      /**/   &none         &none               &none         &none         &none
-                 /*&            &*/          &none        &none          &none       /**/   &none         &none               &none       /*&             &*/
-            >;
-        };
-
-        one_left_sym_layer  {
-            bindings = <
-                   &kp TAB      &kp LT        &kp GT        &kp PIPE      &kp EQUAL   /**/   &none         &none            &none          &none          &none
-                   &kp MINUS    &kp SEMI      &kp TILDE     &kp CARET     &kp AMPS    /**/   &none         &none            &none          &none          &none
-                   &kp BSLH     &kp EXCL      &kp LBKT      &kp RBKT      &kp PRCNT   /**/   &none         &none            &none          &none          &none
-                 /*&            &*/           &none         &none         &none       /**/   &none         &none            &none        /*&                   &*/
-            >;
-        };
-
-        one_right_sym_layer  {
-            bindings = <
-                   &kp GRAVE      &kp DLLR      &kp LBRC      &kp RBRC      &kp PLUS   /**/   &none         &none            &none          &none          &none
-                   &kp UNDERSCORE &kp COLON     &kp LPAR      &kp RPAR      &kp ASTRK  /**/   &none         &none            &none          &none          &none
-                   &kp SQT        &kp DQT       &kp HASH      &kp QMARK     &kp AT     /**/   &none         &none            &none          &none          &none
-                /*&               &*/           &none         &none         &none      /**/   &none         &none            &none        /*&              &*/
-            >;
-        };
-
-        one_nav_layer {
-            bindings = <
-                   &kp C_VOL_DN          &kp END       &kp PG_DN     &kp RIGHT    &kp DOWN     /**/   &none         &none            &none          &none         &none
-                   &sk_MUTE LALT C_MUTE  &sk LCTRL     &sk LCMD      &sk LSHFT    &none        /**/   &none         &none            &none          &none         &none
-                   &kp C_VOL_UP          &kp HOME      &kp PG_UP     &kp LEFT     &kp UP       /**/   &none         &none            &none          &none         &none
-                 /*&                     &*/           &none         &to ONE_LEFT &none        /**/   &none         &none            &none        /*&             &*/
-            >;
-        };
-
-        one_bt_layer {
-            bindings = <
-                   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4 /**/   &none         &none            &none          &none         &none
-                   &bt BT_CLR    &none         &none         &none        &none        /**/   &none         &none            &none          &none         &none
-                   &none         &none         &none         &none        &none        /**/   &none         &none            &none          &none         &none
-                   &none         &none         &none         &none        &none        /**/   &none         &none            &none          &none         &none
-                 /*&            &*/            &none         &none        &none        /**/   &none         &none            &none        /*&             &*/
             >;
         };
     };
